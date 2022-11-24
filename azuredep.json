@@ -99,7 +99,6 @@
       "publicIPAddressType": "Dynamic",
       "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables ('subnetName'))]",
       "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]",
-      "numberOfInstances": 2,
       "lbID": "[resourceId('Microsoft.Network/loadBalancers',parameters('lbName'))]",
       "frontEndIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
       "lbPoolID": "[concat(variables('lbID'),'/backendAddressPools/BackendPool1')]",
