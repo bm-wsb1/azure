@@ -246,7 +246,7 @@
                 "enableFloatingIP": false
               }
             },
-             {
+            {
               "name": "RDP-VM2",
               "properties": {
                 "frontendIPConfiguration": {
@@ -257,6 +257,7 @@
                 "backendPort": 22,
                 "enableFloatingIP": false
               }
+            }
           ],
           "loadBalancingRules": [
             {
