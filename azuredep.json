@@ -99,7 +99,7 @@
       "publicIPAddressType": "Dynamic",
       "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables ('subnetName'))]",
       "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]",
-      "numberOfInstances": 3,
+      "numberOfInstances": 2,
       "lbID": "[resourceId('Microsoft.Network/loadBalancers',parameters('lbName'))]",
       "frontEndIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
       "lbPoolID": "[concat(variables('lbID'),'/backendAddressPools/BackendPool1')]",
@@ -122,8 +122,8 @@
         "apiVersion": "2016-04-30-preview",
         "location": "[resourceGroup().location]",
         "properties": {
-          "platformFaultDomainCount": 3,
-          "platformUpdateDomainCount": 3,
+          "platformFaultDomainCount": 2,
+          "platformUpdateDomainCount": 2,
           "managed": true
         }
       },
@@ -167,7 +167,7 @@
         "location": "[resourceGroup().location]",
         "copy": {
           "name": "nicLoop",
-          "count": 3
+          "count": "[variables('numberOfInstances')]"
         },
         "dependsOn": [
           "[concat('Microsoft.Network/virtualNetworks/', parameters('vnetName'))]",
