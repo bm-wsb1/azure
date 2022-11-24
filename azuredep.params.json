@@ -2,14 +2,17 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "adminUsername": {
+      "storageAccountName": {
         "value": "bogusz"
+      },
+      "adminUsername": {
+        "value": "admin123"
       },
       "adminPassword": {
         "value": "<password>"
       },
-      "dnsLabelPrefix": {
-        "value": "mifurmdns01"
+      "dnsNameforLBIP": {
+        "value": "bogusz"
       }
     }
   }
