@@ -167,7 +167,7 @@
         "location": "[resourceGroup().location]",
         "copy": {
           "name": "nicLoop",
-          "count": 2
+          "count": "[variables('numberOfInstances')]"
         },
         "dependsOn": [
           "[concat('Microsoft.Network/virtualNetworks/', parameters('vnetName'))]",
